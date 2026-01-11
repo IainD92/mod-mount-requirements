@@ -275,7 +275,7 @@ std::string MountRequirements::BuildSpellUpdateQuery(const uint32 id, const uint
 std::string MountRequirements::BuildSpellUpdateQuery(const std::vector<uint32> ids, const uint32 buy, const uint32 level)
 {
     std::string entriesCSV = VectorToCSV(ids);
-    std::string sql = "UPDATE npc_trainer SET "
+    std::string sql = "UPDATE trainer_spell SET "
         "`MoneyCost` = "  + std::to_string(buy) + ", "
         "`ReqLevel` = " + std::to_string(level) + " "
         "WHERE `SpellID` IN (" + entriesCSV + ")";
